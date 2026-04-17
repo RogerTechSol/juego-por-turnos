@@ -1,30 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>creacion del personaje</title>
+    <title>Dark Fantasy Battle</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="caja-encabezado">
-        <h2>Dark Fantasy battle</h2>
-    </div>
 
-    <div class="caja-central">
-        <div class="titulo-placa">
-        <h3>Nombre del jugador</h3></div>
-        <div class="imagen-avatar">
-        
-        </div>    
-        <input type="text" id="input-nombre" placeholder="Escribe tu Alias">
-        <button id="btn-entrar">Entrar al juego</button>
-              
+    <div id="pantalla-inicio">
+        <div class="caja-encabezado">
+            <h2>Dark Fantasy Battle</h2>
         </div>
 
-     <div class="caja-footer">
-        <p>footer</p>
-     </div>
+        <div class="caja-central">
+            <div class="titulo-placa">
+                <h3>Nombre del jugador</h3>
+            </div>
+            <div class="imagen-avatar"></div>    
+            <input type="text" id="input-nombre" placeholder="Escribe tu Alias">
+            <button id="btn-entrar">ENTRAR AL JUEGO</button>
+        </div>
+
+        <div class="caja-footer">
+            <p>V 1.0 - Creado por <a href="https://github.com/RogerTechSol">Roger Solano</a></p>
+        </div>
+    </div>
+
+    <div id="pantalla-seleccion" style="display: none;">
+        <h2 class="titulo-seleccion">Elige a tu Campeón</h2>
+        
+        <div class="contenedor-personajes">
+            <div class="tarjeta-personaje">
+                <div class="marco-img"><img src="https://via.placeholder.com/100" alt="guerrero"></div>
+                <h3>Guerrero</h3>
+                <p>Corte, Escudo, Furia</p>
+                <button class="btn-seleccionar" onclick="seleccionarPersonaje('Guerrero')">Seleccionar</button>
+            </div>
+            <div class="tarjeta-personaje">
+                <div class="marco-img"><img src="https://via.placeholder.com/100" alt="mago"></div>
+                <h3>Mago</h3>
+                <p>Fuego, Hielo, Rayo</p>
+                <button class="btn-seleccionar" onclick="seleccionarPersonaje('Mago')">Seleccionar</button>
+            </div>
+            <div class="tarjeta-personaje">
+                <div class="marco-img"><img src="https://via.placeholder.com/100" alt="cazador"></div>
+                <h3>Cazador</h3>
+                <p>Flecha, Trampa, Veneno</p>
+                <button class="btn-seleccionar" onclick="seleccionarPersonaje('Cazador')">Seleccionar</button>
+            </div>
+            <div class="tarjeta-personaje">
+                <div class="marco-img"><img src="https://via.placeholder.com/100" alt="paladin"></div>
+                <h3>Paladín</h3>
+                <p>Martillo, Luz, Sanación</p>
+                <button class="btn-seleccionar" onclick="seleccionarPersonaje('Paladín')">Seleccionar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pantalla-batalla" style="display: none;"></div>
+
     <script src="javascript.js"></script>
 </body>
-</html>   
+</html>

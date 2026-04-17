@@ -1,28 +1,39 @@
-// 1. CAPTURAR LOS ELEMENTOS
-//USAMOS document.getElementByid para traer los "huesos del HTML al "cerebro"
+// 1. VARIABLES GLOBALES (Memoria del juego)
+let nombreDelJugador = "";
+let personajeElegido = "";
 
-const botonEntrar = document.getElementById('btn-entrar');
+// 2. CAPTURAR ELEMENTOS (Referencias al HTML)
+const pantallaInicio = document.getElementById('pantalla-inicio');
+const pantallaSeleccion = document.getElementById('pantalla-seleccion');
+const pantallaBatalla = document.getElementById('pantalla-batalla');
 const inputNombre = document.getElementById('input-nombre');
+const botonEntrar = document.getElementById('btn-entrar');
 
-// 2.escuchar el clic
-// le decimos al boton: "Quedate atento a cuando alguien te haga clic".
+// 3. FUNCIÓN: ENTRAR AL JUEGO
 botonEntrar.addEventListener('click', function() {
+    const nombreValido = inputNombre.value;
+
+    if(nombreValido === "") {
+        alert("¡Alto ahí, Viajero! Debes decirnos tu nombre.");
+    } else {
+        nombreDelJugador = nombreValido;
+        console.log("Jugador: " + nombreDelJugador);
         
-// 3. OBTENER EL VALOR 
-// Guardamos lo que el usuario escribio en una caja llamada 'nombreUsuario'
-const nombreUsuario = inputNombre.value;
+        // Cambio de pantallas
+        pantallaInicio.style.display = "none";
+        pantallaSeleccion.style.display = "block";
+    }
+});
 
-// 4. VALIDACION (Logica de seguridad)
-// si el nombre esta vacio, lanzamos una alarta medieval.
-
-if(nombreUsuario === "") {
-    alert("!Alto ahi, Viajero! Debes decirnos tu nombre antes de cruzar la puerta");
-
+// 4. FUNCIÓN: SELECCIONAR CAMPEÓN
+function seleccionarPersonaje(nombreHeroe) {
+    personajeElegido = nombreHeroe;
+    alert("Has elegido al valiente " + personajeElegido);
+    
+    // Avanzar a la batalla
+    pantallaSeleccion.style.display = "none";
+    pantallaBatalla.style.display = "block";
+    
+    // Aquí iniciaremos la lógica del combate en la siguiente clase
+    console.log("Iniciando combate de " + personajeElegido + " para " + nombreDelJugador);
 }
-else {
-    //si hay nombre, le damos la bienvenida
-    console.log("Bienvenido al reino, " + nombreUsuario);
-    alert("!Bienvenido, " + nombreUsuario + "!Los guerreros te estaban esperando.");
-
-}
-})
