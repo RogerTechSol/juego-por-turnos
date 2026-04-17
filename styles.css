@@ -1,12 +1,15 @@
 body {
-    background-image: url(e06a7e2ccf1dcee516485f18aee3415e.jpg); /* Tu imagen de fondo */
+    background-image: url(e06a7e2ccf1dcee516485f18aee3415e.jpg); 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment:local;
+    height: 100vh;
     margin: 0;
     padding: 20px;
     font-family: 'Arial', sans-serif;
-    
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+
 }
 
 /* Contenedor invisible para centrar las pantallas */
@@ -69,6 +72,7 @@ body {
     padding: 15px 30px;
     cursor: pointer;
     font-weight: bold;
+    letter-spacing: 0.1rem;
 }
 
 /* FOOTER: Separado abajo */
@@ -80,6 +84,9 @@ body {
     margin-top: 40px; /* Separación para que no se pegue */
     padding: 10px;
     text-align: center;
+
+   
+
 }
 
 /* --- SECCIÓN DE PERSONAJES (En Fila) --- */
