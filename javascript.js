@@ -41,7 +41,8 @@ function combatir(armaJugador) {
     const opciones = ['Espada', 'Acha', 'Lanza' ];
     const armaMaquina = opciones[Math.floor(Math.random() *3)];
     const mensaje = document.getElementById('mensaje-batalla');
-
+    const mensajeM = document.getElementById('mensaje-eleccion')
+    const mensajeJ = document.getElementById('mensaje-')
 
 // resultado de la batalla
 if (armaJugador === armaMaquina) {
@@ -54,7 +55,7 @@ else if (
 ){
     vidasEnemigo--;
     document.getElementById('vidas-jugador').innerText = vidasEnemigo;
-    MENSAJE.innerText = "¡Punto para ti! " + armaJugador + " venca a " + armaMaquina;
+    mensaje.innerText = "¡Punto para ti! " + armaJugador + " venca a " + armaMaquina;
 
 }
 else{

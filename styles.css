@@ -206,7 +206,7 @@ btn-seleccionar{
     font-size: 1.0rem;
     margin-top: 10px;
     width: 188px;
-    
+
     text-transform: uppercase;
     font-family: arial;
 }
@@ -267,7 +267,10 @@ btn-seleccionar{
         font-size: 1rem;
     }
 
+    
+
 }
+
 
 
 /* 2. TELÉFONOS (Pantallas menores a 480px) */
