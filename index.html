@@ -32,34 +32,67 @@
         
         <div class="contenedor-personajes">
             <div class="tarjeta-personaje">
-                <div class="marco-img"><img src="https://via.placeholder.com/100" alt="guerrero"></div>
+                <div class="marco-img"><img src="fd7519dcb7273b7a3dd9567c026ba9a3.jpg"guerrero"></div>
                 <h3>Guerrero</h3>
-                <p>Corte, Escudo, Furia</p>
+                <p>Espada, Acha, Lanza</p>
                 <button class="btn-seleccionar" onclick="seleccionarPersonaje('Guerrero')">Seleccionar</button>
             </div>
             <div class="tarjeta-personaje">
-                <div class="marco-img"><img src="https://via.placeholder.com/100" alt="mago"></div>
+                <div class="marco-img"><img src="fc76e892ee20054ffa682266578abc3d.jpg" alt="mago"></div>
                 <h3>Mago</h3>
-                <p>Fuego, Hielo, Rayo</p>
+                <p>Espada, Acha, Lanza</p>
                 <button class="btn-seleccionar" onclick="seleccionarPersonaje('Mago')">Seleccionar</button>
             </div>
             <div class="tarjeta-personaje">
-                <div class="marco-img"><img src="https://via.placeholder.com/100" alt="cazador"></div>
+                <div class="marco-img"><img src="949c9832fa6cdabf7f05ea72098c0f20 (1).jpg" alt="cazador"></div>
                 <h3>Cazador</h3>
-                <p>Flecha, Trampa, Veneno</p>
+                <p>Espada, Acha, Lanza </p>
                 <button class="btn-seleccionar" onclick="seleccionarPersonaje('Cazador')">Seleccionar</button>
             </div>
             <div class="tarjeta-personaje">
-                <div class="marco-img"><img src="https://via.placeholder.com/100" alt="paladin"></div>
+                <div class="marco-img"><img src="a2dc6f2a28b6231cf224e4bb1be7a1b5.jpg" alt="paladin"></div>
                 <h3>Paladín</h3>
-                <p>Martillo, Luz, Sanación</p>
+                <p>Espada, Acha, Lanza</p>
                 <button class="btn-seleccionar" onclick="seleccionarPersonaje('Paladín')">Seleccionar</button>
             </div>
         </div>
     </div>
+<div id="pantalla-batalla" style="display: none;">
+    <div class="caja-encabezado-batalla">
+        <h2>Dark Fantasy Battle</h2>
+    </div>
 
-    <div id="pantalla-batalla" style="display: none;"></div>
+    <div class="contenedor-versus">
+        <div class="caja-personaje">
+            <div class="titulo-placa"><h3 id="nombre-jugador-batalla">Jugador</h3></div>
+            <div class="marco-combate">
+                <img src="a2dc6f2a28b6231cf224e4bb1be7a1b5.jpg" id="img-jugador-combate" alt="jugador">
+            </div>
+            <div class="stats-vidas">Vidas: <span id="vidas-jugador">3</span></div>
+            <div class="controles-poderes">
+                <button class="btn-poder" onclick="combatir('Espada')">ESPADA</button>
+                <button class="btn-poder" onclick="combatir('Acha')">ACHA</button>
+                <button class="btn-poder" onclick="combatir('Lanza')">LANZA</button>
+            </div>
+        </div>
 
+        <div class="separador-vs">
+            <div class="circulo-vs">VS</div>
+            <p id="mensaje-batalla">¡A LUCHAR!</p>
+        </div>
+
+        <div class="caja-personaje">
+            <div class="titulo-placa"><h3>Valir el Destructor</h3></div>
+            <div class="marco-combate">
+                <img src="52938ea0b37bca023a0d409b3beafd0f.jpg" alt="maquina">
+            </div>
+            <div class="stats-vidas">Vidas: <span id="vidas-enemigo">3</span></div>
+            <div class="controles-poderes">
+                <div class="placeholder-poder">???</div>
+            </div>
+        </div>
+    </div>
+</div>
     <script src="javascript.js"></script>
 </body>
 </html>

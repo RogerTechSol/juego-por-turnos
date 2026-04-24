@@ -1,39 +1,78 @@
-// 1. VARIABLES GLOBALES (Memoria del juego)
+//1 variables
 let nombreDelJugador = "";
 let personajeElegido = "";
+let vidasJugador = 3;
+let vidasEnemigo = 3;
 
-// 2. CAPTURAR ELEMENTOS (Referencias al HTML)
+//2. pantalla de seleccion
+
 const pantallaInicio = document.getElementById('pantalla-inicio');
 const pantallaSeleccion = document.getElementById('pantalla-seleccion');
-const pantallaBatalla = document.getElementById('pantalla-batalla');
-const inputNombre = document.getElementById('input-nombre');
-const botonEntrar = document.getElementById('btn-entrar');
+const pantallaBatalla= document.getElementById('pantalla-batalla');
+const inputNombre = document.getElementById('input-nombre')
 
-// 3. FUNCIÓN: ENTRAR AL JUEGO
-botonEntrar.addEventListener('click', function() {
-    const nombreValido = inputNombre.value;
+//3 pasar de inicio a seleccion 
 
-    if(nombreValido === "") {
-        alert("¡Alto ahí, Viajero! Debes decirnos tu nombre.");
-    } else {
-        nombreDelJugador = nombreValido;
-        console.log("Jugador: " + nombreDelJugador);
-        
-        // Cambio de pantallas
+document.getElementById('btn-entrar').addEventListener('click', function() {
+    if(inputNombre.value === "") {
+        alert ("!Escribe tu nombre Guerrero¡");
+
+    } else{
+        nombreDelJugador = inputNombre.value;
         pantallaInicio.style.display = "none";
         pantallaSeleccion.style.display = "block";
     }
 });
 
-// 4. FUNCIÓN: SELECCIONAR CAMPEÓN
-function seleccionarPersonaje(nombreHeroe) {
-    personajeElegido = nombreHeroe;
-    alert("Has elegido al valiente " + personajeElegido);
-    
-    // Avanzar a la batalla
+
+//4. pasar de seleccion de personaje a la batalla 
+
+function seleccionarPersonaje(clase) {
+    personajeElegido = clase
+    document.getElementById('nombre-jugador-batalla').innerText = nombreDelJugador + " (" + clase + ") ";
+
     pantallaSeleccion.style.display = "none";
     pantallaBatalla.style.display = "block";
+}
+
+//5.  logica de la batalla 
+
+function combatir(armaJugador) {
+    const opciones = ['Espada', 'Acha', 'Lanza' ];
+    const armaMaquina = opciones[Math.floor(Math.random() *3)];
+    const mensaje = document.getElementById('mensaje-batalla');
+
+
+// resultado de la batalla
+if (armaJugador === armaMaquina) {
+    mensaje.innerText = "!Empate¡ ambos usaron " + armaJugador;
+}
+else if (
+    (armaJugador === 'Espada' && armaMaquina === 'Acha')||
+    (armaJugador === 'Acha' && armaMaquina === 'Lanza')||
+    (armaJugador === 'Lanza' && armaMaquina === 'Espada')
+){
+    vidasEnemigo--;
+    document.getElementById('vidas-jugador').innerText = vidasEnemigo;
+    MENSAJE.innerText = "¡Punto para ti! " + armaJugador + " venca a " + armaMaquina;
+
+}
+else{
+    vidasJugador--;
+    document.getElementById('vidas-jugador').innen = vidasJugador;
+    mensaje.innerText = "¡Punto para la maquina! " + armaMaquina + " vence a " + armaJugador;
     
-    // Aquí iniciaremos la lógica del combate en la siguiente clase
-    console.log("Iniciando combate de " + personajeElegido + " para " + nombreDelJugador);
+}
+revisarGanador()
+}
+
+function revisarGanador() {
+    if (vidasEnemigo <= 0){
+        alert("¡Felicidades " + nombreDelJugador + "¡ Has ganado el combate.");
+        location.reload();
+    }
+    else if (vidasJugador <= 0) {
+        alert("¡Has sido derrotado... el reino ha Caido.");
+        location.reload();
+    }
 }
