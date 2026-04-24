@@ -3,7 +3,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment:local;
-    height: 100vh;
+    height: 125vh;
     margin: 0;
     padding: 20px;
     font-family: 'Arial', sans-serif;
@@ -199,17 +199,34 @@ btn-seleccionar{
 }
 
 #mensaje-batalla {
-    color: red;
+    background-color: #d4af37;
+    color: #263238;
+    border:  2px solid #263238;
     text-align: center;
     font-size: 1.0rem;
     margin-top: 10px;
-    width: 120px;
+    width: 188px;
+    
+    text-transform: uppercase;
+    font-family: arial;
 }
 
 .stats-vidas {
     color: #d4af37;
     font-weight: bold;
 }
+.nombre-juego{
+     background-color: rgba(62, 39, 35, 0.9);
+    border: 5px solid #d4af37;
+    color: #d4af37;
+    width: 320px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+
+}
+
 
 /* --- MEDIA QUERIES --- */
 
@@ -241,7 +258,17 @@ btn-seleccionar{
     .caja-personaje {
         width: 90%; /* Se estiran para ocupar el ancho del móvil */
     }
+    .nombre-juego {
+        width: 85%; /* Casi todo el ancho de la pantalla */
+        max-width: 300px;
+        border-width: 3px; /* Bordes un poco más delgados para pantallas pequeñas */
+        padding: 8px;
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+
 }
+
 
 /* 2. TELÉFONOS (Pantallas menores a 480px) */
 @media (max-width: 480px) {
@@ -292,4 +319,10 @@ btn-seleccionar{
     .marco-combate {
         height: 150px;
     }
+    
+    .nombre-juego {
+        font-size: 0.9rem;
+        border-width: 3px;
+    }
+
 }
